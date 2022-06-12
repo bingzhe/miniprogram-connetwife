@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class='image_01'>
+	<image src="/pages/image/wifi.png" class='in-image'>
+	</image>
+</view>
+<view wx:if="{{startError}}">
+	<view class='error'>
+		<icon type="warn" size="40" />
+		<text>{{startError}}</text>
+	</view>
+	<view class='info'>请尝试手动连接。</view>
+	<view class='info'>
+		<text>wifi帐号:</text>
+		<text>{{SSID}}</text>
+	</view>
+	<view class='info'>
+		<text>wifi密码:</text>
+		<text selectable class='pass'>{{password}}</text>
+	</view>
+</view>
+<view wx:if="{{wifiListError}}">
+	<view class='error'>
+		<icon type="warn" size="40" />
+		<text>{{wifiListErrorInfo}}</text>
+	</view>
+	<view class='info'>请尝试手动连接。</view>
+	<view class='info'>
+		<text>wifi帐号:</text>
+		<text>{{SSID}}</text>
+	</view>
+	<view class='info'>
+		<text>wifi密码:</text>
+		<text selectable class='pass'>{{password}}</text>
+	</view>
+</view>
+
+<view wx:if="{{iswifi == true}}">
+	<view class='success'>
+		<icon type="success" size="40" />
+		<text>{{endError}}</text>
+	</view>
+</view>
+
+<view wx:if="{{iswifi == false}}">
+	<view class='info'>请尝试手动连接。</view>
+	<view class='info'>
+		<text>wifi帐号:</text>
+		<text>{{SSID}}</text>
+	</view>
+	<view class='info'>
+		<text>wifi密码:</text>
+		<text selectable class='pass'>{{password}}</text>
+	</view>
+</view>
+
+<!-- <view>手机网络状态：{{iswifi}}</view> -->
+<view class='add_btn'>
+	<button class='btn' bindtap="startwifi" hover-class='btn_hover'>
+		加入网络
+	</button>
+</view>

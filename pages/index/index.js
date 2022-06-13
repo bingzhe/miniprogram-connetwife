@@ -13,7 +13,16 @@ Page({
     networkType: "", //网络状态
     iswifi: null,
   },
-  onLoad() {
+  onLoad(options) {
+    if (options.wifi && options.psd) {
+      this.setData({
+        SSID: options.wifi,
+        password: options.psd,
+      });
+    }
+    console.log("SSID", options.wifi);
+    console.log("password", options.psd);
+
     wx.getSystemInfo({
       success: function (res) {
         var system = "";
